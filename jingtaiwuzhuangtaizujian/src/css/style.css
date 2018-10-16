@@ -1,0 +1,14 @@
+body,ul,h1,h2,h3,h4,h5,h6{
+    margin:0px;
+    padding: 0px;
+}
+#div1{
+    width: 200px;
+    height: 200px;
+    background: url(../img/1.gif);
+    color: #fff;
+}
+#div1 a{
+    color: #fff;
+    text-decoration: none;
+}

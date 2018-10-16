@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多个并非请求</title>
+<script type="text/javascript" src="../js/axios.js"></script>
+</head>
+
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+var div1=document.getElementById("div1");
+axios.all([
+
+    axios.get('data1.php'),
+
+    axios.get('data2.php')
+
+  ])
+
+  .then(axios.spread(function (data1,data2) {
+
+    // 上面两个请求都完成后，才执行这个回调方法
+	//当所有的请求都完成后，会收到一个数组，包含着响应对象，其中的顺序和请求发送的顺序相同，可以使用 axios.spread 分割成多个单独的响应对象
+
+    console.log('User', data1.data);
+
+    console.log('Repositories', data1.data);
+
+  }));
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/axios.js"></script>
+		<script type="text/javascript">
+			//默认情况下，axios将JavaScript对象序列化为JSON。
+			//要以应用程序/ x-www-form-urlencoded格式发送数据:
+			var params = new URLSearchParams();
+            params.append('name', 'tom');
+            params.append('age', 22);
+            //发送一个post跨域请求
+			axios({
+              method:'post',
+              url:'http://localhost/mybooks/demo10/data1.php',
+              data:params
+             }).then(function(response){
+               console.log(response);
+          });
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>post获取json</title>
+<script type="text/javascript" src="../js/axios.js"></script>
+</head>
+
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+axios.post('data.php',{
+	  name:"jarry",
+	  age:"21"
+	})
+  .then(function (response) {
+	console.log("打印response对象:");
+    console.log(response);
+	console.log("打印服务器返回的数据:");
+	console.log(response.data);
+	console.log(response.data.name);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+</script>
+</body>
+</html>

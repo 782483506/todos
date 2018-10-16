@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>post获取json</title>
+<script type="text/javascript" src="../js/axios.js"></script>
+</head>
+
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+// 发送一个 POST 请求
+var params = new URLSearchParams();
+params.append('name', 'sss');
+params.append('age', 42);
+
+axios({
+  method: 'post',
+  url: 'data.php',
+  data:params
+}).then(function (response) {
+    console.log(response);
+  });
+
+</script>
+</body>
+</html>
